@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/Template.dwt" codeOutsideHTMLIsLocked="false" --><head>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" href="Images/favicon.ico" />
+<link href="oneColFixCtrHdr.css?version=4" rel="stylesheet" type="text/css"/>
+
+<style type="text/css">
+
+#RedText {
+	color: #900;
+	font-style: italic;
+}
+</style>
+
+
+
+
+<script type="text/javascript">
+
+if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile/i.test(navigator.userAgent))
+{
+if(document.URL !="http://m.dutchbirthplates.com")
+{
+window.location ="http://m.dutchbirthplates.com";
+}
+}
+
+</script>
+
+
+<link href="Spry-UI-1.7/css/Menu/basic/SpryMenuBasic.css" rel="stylesheet" type="text/css">
+<script src="Spry-UI-1.7/includes/SpryDOMUtils.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryDOMEffects.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryWidget.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryMenu.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/MenuBar2/SpryMenuBarKeyNavigationPlugin.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/MenuBar2/SpryMenuBarIEWorkaroundsPlugin.js" type="text/javascript"></script>
+<style type="text/css">
+/* BeginOAWidget_Instance_2141544: #MenuBar */
+/* Settable values for skinning a Basic menu via presets. If presets are not sufficient, most skinning should be done in
+	these rules, with the exception of the images used for down or right pointing arrows, which are in the file SpryMenuBasic.css
+	
+	 These assume the following widget classes for menu layout (set in a preset)
+	.MenuBar - Applies to all menubars - default is horizontal bar, all submenus are vertical - 2nd level subs and beyond are pull-right.
+	.MenuBarVertical - vertical main bar; all submenus are pull-right.
+	
+	You can also pass in extra classnames to set your desired top level menu bar layout. Normally, these are set by using a preset. 
+	They only apply to horizontal menu bars:
+		MenuBarLeftShrink - The menu bar will be horizontally 'shrinkwrapped' to be just large enough to hold its items, and left aligned
+		MenuBarRightShrink - Just like MenuBarLeftShrink, but right aligned
+		MenuBarFixedLeft - Fixed at a specified width set in the rule '.MenuBarFixedLeft', and left aligned.  
+		MenuBarFixedCentered -  - Fixed at a specified width set in the rule '.MenuBarFixedCentered', 
+						and centered in its parent container.
+		MenuBarFullwidth - Grows to fill its parent container width.
+ 
+	In general, all rules specified in this file are prefixed by #MenuBar so they only apply to instances of the widget inserted along
+	with the rules. This permits use of multiple MenuBarBasic widgets on the same page with different layouts. Because of IE6 limitations,
+	there are a few rules where this was not possible. Those rules are so noted in comments.
+	
+*/
+
+#MenuBar  {
+	background-color:#EEE;
+	font-family: Verdana, Geneva, sans-serif; /* Specify fonts on on MenuBar and subMenu MenuItemContainer, so MenuItemContainer,
+												MenuItem, and MenuItemLabel
+												at a given level all use same definition for ems.
+												Note that this means the size is also inherited to child submenus, 
+												so use caution in using relative sizes other than
+												100% on submenu fonts. */
+	font-weight: normal;
+	font-size: 14px;
+	font-style: normal;
+	padding:0;
+	border-color: #ffffff #ffffff #ffffff #ffffff;
+	border-width:0px;
+	border-style: none none none none;
+	color: #369;
+	margin-top: -15px;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+/* Caution: because ID+class selectors do not work properly in IE6, but we want to restrict these rules to just this
+widget instance, we have used string-concatenated classnames for our selectors for the layout type of the menubar 
+in this section. These have very low specificity, so be careful not to accidentally override them. */
+
+.MenuBar br { /* using just a class so it has same specificity as the ".MenuBarFixedCentered br" rule bleow */
+	display:none;
+}
+.MenuBarLeftShrink {
+	float: left; /* shrink to content, as well as float the MenuBar */
+	width: auto;
+}
+.MenuBarRightShrink {
+	float: right; /* shrink to content, as well as float the MenuBar */
+	width: auto;
+}
+.MenuBarFixedLeft {
+	float: left;
+	width: 80em;
+}
+.MenuBarFixedCentered {
+	float: none;
+	width: 80em;
+	margin-left:auto;
+	margin-right:auto;
+}
+.MenuBarFixedCentered br {
+	clear:both;
+	display:block;
+}
+.MenuBarFixedCentered .SubMenu br {
+	display:none;
+}
+.MenuBarFullwidth {
+	float: left;
+	width: 100%;
+}
+
+/* Top level menubar items - these actually apply to all items, and get overridden for 1st or successive level submenus */
+#MenuBar  .MenuItemContainer {
+	padding: 0px 0px 0px 0px; 
+	margin: 0; 	/* Zero out margin  on the item containers. The MenuItem is the active hover area.
+				For most items, we have to do top or bottom padding or borders only on the MenuItem 
+				or a child so we keep the entire submenu tiled with items.
+				Setting this to 0 avoids "dead spots" for hovering. */
+}
+#MenuBar  .MenuItem {
+	padding: 5px 15px 5px 14.9px; 
+	background-color:#EEE;
+	border-width:1px;
+	border-color: #cccccc #ffffff #cccccc #ffffff; 
+	border-style: none solid none solid;
+}
+#MenuBar  .MenuItemFirst {
+	border-style: none none none none;
+}
+#MenuBar .MenuItemLast {
+	border-style: none solid none none;
+}
+
+#MenuBar  .MenuItem  .MenuItemLabel{
+	text-align:center;
+	line-height:1.4em;
+	color:#369;
+	background-color:#EEE;
+	/* padding: 5px 15px 5px 14.9px; */  /* */
+	padding: 5px 7.5px 5px 7.5px;
+	width: 10em;
+	width:auto; 
+}
+.SpryIsIE6 #MenuBar  .MenuItem  .MenuItemLabel{
+	width:1em; /* Equivalent to min-width in modern browsers */
+}
+
+/* First level submenu items */
+#MenuBar .SubMenu  .MenuItem {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	font-style: normal;
+	background-color:#EEE;
+	padding:5px 2px 5px 0px;
+	border-width:1px;
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+	/* Border styles are overriden by first and last items */
+	border-style: solid solid none solid;
+}
+#MenuBar  .SubMenu .MenuItemFirst {
+	border-style: solid solid none solid;
+}
+#MenuBar  .SubMenu .MenuItemFirst .MenuItemLabel{
+	padding-top: 6px; 
+}
+#MenuBar .SubMenu .MenuItemLast {
+	border-style: solid solid solid solid;
+}
+#MenuBar .SubMenu .MenuItemLast .MenuItemLabel{
+	padding-bottom: 6px; 
+}
+#MenuBar .SubMenu .MenuItem .MenuItemLabel{
+	text-align:center;
+	line-height:1em;
+	background-color:#EEE;
+	color:#369;
+	padding: 4px 15px 4px 14.9px;
+	width: 7em;
+	width:auto;
+}
+
+/* Hover states for containers, items and labels */
+#MenuBar .MenuItemHover {
+	background-color:#369;
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+}
+
+#MenuBar .MenuItemWithSubMenu.MenuItemHover .MenuItemLabel{
+	background-color:#369;
+	color: #FFF;
+}
+#MenuBar .MenuItemHover .MenuItemLabel{
+	background-color: #369;
+	color: #FFF;
+}
+#MenuBar .SubMenu .MenuItemHover {
+	background-color: #369; 
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+}
+
+#MenuBar .SubMenu .MenuItemHover .MenuItemLabel{
+	background-color: #369; 
+	color: #FFF;
+}
+/* Submenu properties -- First level of submenus */
+#MenuBar .SubMenuVisible {
+	background-color: #369;
+	min-width:100%;  /* This keeps the menu from being skinnier than the parent MenuItemContainer - nice to have but not available on ie6 */
+	border-color: #ffffff #ffffff #ffffff #ffffff; 
+	border-width:0px;
+	border-style: none none none none;
+}
+#MenuBar.MenuBar .SubMenuVisible {/* For Horizontal menubar only */
+	top: 100%;	/* 100% is at the bottom of parent menuItemContainer */
+	left:0px; /* 'left' may need tuning depending upon borders or padding applied to menubar MenuItemContainer or MenuItem, 
+					and your personal taste.
+					0px will left align the dropdown with the content area of the MenuItemContainer. Assuming you keep the margins 0 
+					on MenuItemContainer and MenuItem on the parent
+					menubar, making this equal the sum of the MenuItemContainer & MenuItem padding-left will align 
+					the dropdown with the left of the menu item label.*/
+	z-index:10;
+}
+#MenuBar.MenuBarVertical .SubMenuVisible {
+	top: 0px;	
+	left:100%;
+	min-width:0px; /* Do not neeed to match width to parent MenuItemContainer - items will prevent total collapse */
+}
+/* Submenu properties -- Second level submenu and beyond - these are visible descendents of .MenuLevel1 */
+#MenuBar .MenuLevel1 .SubMenuVisible {
+	background-color: #EEE;
+	min-width:0px; /* Do not neeed to match width to parent MenuItemContainer - items will prevent total collapse*/
+	top: 0px;	/* If desired, you can move this down a smidge to separate top item''s submenu from menubar - 
+				that is really only needed for submenu on first item of MenuLevel1, or you can make it negative to make submenu more
+				vertically 'centered' on its invoking item */
+	left:100%; /* If you want to shift the submenu left to partially cover its invoking item, you can add a margin-left with a 
+				negative value to this rule. Alternatively, if you use fixed-width items, you can change this left value
+				to use px or ems to get the offset you want. */
+}
+/* IE6 rules - you can delete these if you do not want to support IE6 */
+
+/* A note about multiple classes in IE6.
+ * Some of the rules above use multiple class names on an element for selection, such as "hover" (MenuItemHover) and "has a subMenu" (MenuItemWithSubMenu),
+ * giving the selector '.MenuItemWithSubMenu.MenuItemHover'.
+ * Unfortunately IE6 does not support using mutiple classnames in a selector for an element. For a selector such as '.foo.bar.baz', IE6 ignores
+ * all but the final classname (here, '.baz'), and sets the specificity accordingly, counting just one of those classs as significant. To get around this 
+ * problem, we use the plugin in SpryMenuBarIEWorkaroundsPlugin.js to generate compound classnames for IE6, such as 'MenuItemWithSubMenuHover'. 
+ * Since there are a lot of these needed, the plugin does not generate the extra classes for modern browsers, and we use the CSS2 style mutltiple class
+ * syntax for that. Since IE6 both applies rules where 
+ * it should not, and gets the specificity wrong too, we have to order rules carefully, so the rule misapplied in IE6 can be overridden. 
+ * So, we put the multiple class rule first. IE6 will mistakenly apply this rule.  We follow this with the single-class rule that it would 
+ * mistakenly override, making sure the  misinterpreted IE6 specificity is the same as the single-class selector, so the latter wins. 
+ * We then create a copy of the multiple class rule, adding a '.SpryIsIE6' class as context, and making sure the specificity for
+ * the selector is high enough to beat the single-class rule in the "both classes match" case. We place the IE6 rule at the end of the 
+ * css style block to make it easy to delete if you want to drop IE6 support.
+ * If you decide you do not need IE6 support, you can get rid of these, as well as the inclusion of the SpryMenuBarIEWorkaroundsPlugin.js script.
+ * The 'SpryIsIE6' class is placed on the HTML element by  the script in SpryMenuBarIEWorkaroundsPlugin.js if the browser is Internet Explorer 6. This avoids the necessity of IE conditional comments for these rules.
+ */
+.SpryIsIE6 #MenuBar .MenuBarView .MenuItemWithSubMenuHover .MenuItemLabel /* IE6 selector  */{
+	background-color: #999999; /* consider exposing this prop separately*/
+	color: #000000;
+}
+.SpryIsIE6 #MenuBar .MenuBarView .SubMenu .MenuItemWithSubMenuHover .MenuItemLabel/* IE6 selector  */{
+	background-color: #cccccc; /* consider exposing this prop separately*/
+	color: #333333;
+}
+.SpryIsIE6 #MenuBar .SubMenu .SubMenu  /* IE6 selector  */{
+	margin-left: -0px; /* Compensates for at least part of an IE6 "double padding" version of the "double margin" bug */
+}
+
+/* EndOAWidget_Instance_2141544 */
+</style>
+
+<script type="text/xml">
+<!--
+<oa:widgets>
+  <oa:widget wid="2141544" binding="#MenuBar" />
+</oa:widgets>
+-->
+</script> 
+
+
+<!--Start menu item label code-->
+<script type="text/javascript" language="JavaScript">
+function InitPage(){
+Spry.$$('#MenuBar li').forEach(function(node){ /*for FF Chrome etc*/
+    var a=node.getElementsByTagName("a")[0]; // finds all a elements inside the li, but we only want the first so [0]
+	if(a.href == window.location){
+        Spry.Utils.addClassName(node,"activeMenuItem");
+		Spry.Utils.addClassName(node,"activeMenuItem2");
+    }
+	else if (window.location == "http://www.dutchbirthplates.com/") {
+		if (a.href == "http://www.dutchbirthplates.com/index.html") {
+		Spry.Utils.addClassName(node,"activeMenuItem");
+		Spry.Utils.addClassName(node,"activeMenuItem2");
+		}
+	}
+		
+});
+Spry.$$('#MenuBar div.MenuItemContainer').forEach(function(node){ /*for IE */
+    var a=node.getElementsByTagName("a")[0]; // finds all a elements inside the li, but we only want the first so [0]
+    if(a.href == window.location){
+        Spry.Utils.addClassName(node,"activeMenuItem");
+		Spry.Utils.addClassName(node,"activeMenuItem2");
+    }
+	else if (window.location == "http://www.dutchbirthplates.com/") {
+		if (a.href == "http://www.dutchbirthplates.com/index.html") {
+		Spry.Utils.addClassName(node,"activeMenuItem");
+		Spry.Utils.addClassName(node,"activeMenuItem2");
+		}
+	}
+});
+}
+Spry.Utils.addLoadListener(InitPage);
+</script>
+ 
+<style>
+#MenuBar .activeMenuItem .MenuItem .MenuItemLabel {
+     background-color:#036; /* consider exposing this prop separately*/
+	 color: #FFF;
+	 /*font-weight:600;*/
+	 }
+#MenuBar .activeMenuItem2 .MenuItem {
+     background-color: #036; /* consider exposing this prop separately*/
+}
+
+</style>
+
+<!--End menu item label code-->	
+
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+
+
+<title>Birth Plate and Baby Name Plates | John Braat and Company LLC.</title>
+<meta property="og:url"           content="http://www.dutchbirthplates.com/" />
+<meta property="og:type"          content="website" />
+<meta property="og:description"   content="Check out our incredible hand personalized birth plates and baby name plates. Imported from Holland, our plates feature elegant artwork. Browse today!" />
+<meta property="og:image"         content="http://dutchbirthplates.com/Images/Birth16.jpg" />
+<meta name="Description"  content="Check out our incredible hand personalized birth plates and baby name plates. Imported from Holland, our plates feature elegant artwork. Browse today!">
+<meta name="Title"  content="Birth Plate and Baby Name Plates | John Braat and Company LLC.">
+<content="Will Braat - Dutch Delft Blue commemorative birth and wedding plates">
+
+</head>
+
+<body>
+
+
+<div class="container">
+  <div class="header"><!-- end .header -->
+  <img src="Images/websiteheader.png" width="960" height="196"></div>
+  <div class="content">
+    <ul id="MenuBar">
+      <li> <a href="index.html">Home</a></li> 
+      <li> <a href="BirthPlates.html">Birth Plates</a></li>
+      <li> <a href="WeddingPlates.html">Wedding Plates</a></li>
+      <li> <a href="AnniversaryPlates.html">Anniversary Plates</a></li>
+      <li> <a href="#">Order</a>
+      <ul>
+          <li> <a href="OrderBirthOnline.html">Order 6 inch Birth Plate Online</a></li>
+          <li> <a href="OrderBirthOnline21.html">Order 8 inch Blue Birth Plate Online</a></li>
+          <li> <a href="OrderPolyBirthOnline.html">Order 8 inch Color Birth Plate Online</a></li>
+          <li> <a href="Order27cmBirthOnline.html">Order 11 inch Birth Plate Online</a></li>
+          <li> <a href="OrderBirthTileOnline.html">Order 6 inch Birth Tile Online</a></li>
+          <li> <a href="OrderWeddingOnline.html">Order Wedding Plate Online</a></li>
+          <li> <a href="OrderWeddingTileOnline.html">Order Wedding Tile Online</a></li>
+          <li> <a href="OrderAnniversaryOnline.html">Order Anniversary Plate Online</a></li> 
+          <li> <a href="OrderByMail.html">Order by Mail</a>
+          <li> <a href="CustomerService.html">Customer Service</a>
+          <li> <a href="History.html">History</a></li>
+		  <li> <a href="CustomerComments.html">Customer Comments</a>
+          </li>
+        </ul>
+      <li> <a href="ContactUs.html">Contact Us</a></li>
+      <li> <a href="ReturnPolicy.html">Returns</a></li>
+       <li> <a href="CustomerService.html">Service</a></li>
+     
+     </ul>
+    <script type="text/javascript">
+// BeginOAWidget_Instance_2141544: #MenuBar
+var MenuBar = new Spry.Widget.MenuBar2("#MenuBar", {
+      widgetID: "MenuBar",
+	  //widgetClass: "MenuBar  MenuBarLeftShrink",
+	  //widgetClass: "MenuBar  MenuBarFixedCentered"
+	  widgetClass: "MenuBar  MenuBarFullWidth"
+	  //insertMenuBarBreak: true
+      //mainMenuShowDelay: 100,
+     // mainMenuHideDelay: 200,
+//      subMenuShowDelay: 200,
+//      subMenuHideDelay: 200
+      });
+	  
+  
+// EndOAWidget_Instance_2141544
+    </script>
+
+<!--'/*Page specific info goes here*/-->
+
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+  <div class="content">
+    <h2>      Customer Comments</h2>
+    <h4>Kudos from our Customers - we're delighted to receive positive comments from our customers.</h4>
+    
+    <div dir="auto"> </div>
+    <p>Thank you for the beautiful plates; the ones which you did for my children hang in my home to this day.  Additionally, my children and in-law children assure me their plates are equally treasured.<br>
+    <em>S.C. Somerset, New Jersey </em></p>
+    <div dir="auto"> </div>
+    <p>Thank you.  This is about my 12th birth plate purchase.  I love them and think it is a wonderful gift!<br />
+    <em>L.G., Unionville, Connecticut</em></p>
+<p>Thank you so very much!  I'll have to talk to the people who gave it to us, so they can recommend you to others, stressing the great customer service! - and use your service again. This plate is very precious as 
+  was the occasion and will certainly hold a special place in our house (for all to see).<br />
+  <em>P.D., Bloomington, Minnesota</em></p>
+<p>Thank you so very much, the plate has arrived today and it is absolutely beautiful. Even nicer than the last one I got, the colors are brighter blues. Absolutely wonderful, be sure that I will recommend you to my friends. Again, thanks. W<em>.C., Dauphin, Pennsylvania</em></p>
+<p>The Birth Plate that I ordered from you arrived yesterday and it is beautiful!!  Thank you so much - we have 
+  5 of those plates and the last was recently broken so I am thrilled to have been able to replace it so perfectly! 
+  All 5 are back up on the wall and they look great!  Thank you so much!<br />
+  <em>B.H., Wells, Maine</em></p>
+<p>Thank you very much for your reply, all the plates are really beautiful and exactly what we wanted.  Over 
+  thirty years ago my mother had plates made for my children and they are much treasured, now their children 
+  will have the same from their grandmother. Thank you.<br />
+  <em>N.S., St. Ives, New South Wales, Australia</em></p>
+<p>I am so happy to have found you.  I had purchased about 26 years ago from you for both of my children and 
+  now my daughter is having a baby and I was trying to find one like it.  I happened to find in my files an old order 
+  from when you were in Boston.  So glad you are still around.<br />
+  <em>B.S., Houston, Texas</em></p>
+<p>I received the birth Tile today... Thank you very much for your prompt &amp; efficient service.<br />
+  <em>J.D.R., Australian Capital Territory, Australia</em></p>
+<p>Thank you for this extra effort.  My wife is from Delft and we love to give the tiles to family members having 
+  babies. You provide an excellent product for the price and we look forward to more opportunities to purchase 
+  from you.<br />
+  <em>I.O., USA</em></p>
+<p>Thank you received order yesterday, of the same high standard as plates ordered from you 1972 and 1975 on
+  the birth of our daughters. <br />
+  <em>M.W., Merseyside, United Kingdom</em></p>
+<p>Thank you! The plates I have received thus far are beautiful!  I will be placing another order in the future.<br>
+  N.K.,<em> Richmond, Texas</em></p>
+<p>Thank you so much. The new plate with the correct details arrived today and it is exactly what we wanted and I am sure my grand daughter will always treasure it as a memento of her birth.
+I will happily recomend your products to others especially because of your wonderful service which far exceeded my expectations. Thank you. <em> R.F. Victoria, Australia </em></p> 
+
+  
+<div></div>
+<p>&nbsp;</p>
+<div></div>
+<div></div>
+<p>&nbsp;</p>
+<p><!-- end .content --></p>
+  </div>
+
+<!-- InstanceEndEditable -->
+
+
+<!--/*end of page specific info*/-->
+  </div>
+  <div class="footer">
+  
+  
+<table width="80" height="25" border="0" align="center">
+  <tr>
+<!-- Facebook -->
+    <td width="25" height="25">
+    <a class="td-social-sharing-buttons td-social-facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdutchbirthplates.com%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i  	
+    class="td-icon-facebook"></i><div class="td-social-but-text"><img src="Images/fb.png" width="25" height="25" </div></td></a>
+<!-- Twitter -->
+    <td width="25" height="25">
+<a class="td-social-sharing-buttons td-social-twitter" href="https://twitter.com/intent/tweet?text=&url=http%3A%2F%2Fdutchbirthplates.com%2F&via=www.dutchbirthplates.com"  ><i class="td-icon-twitter"></i><div class="td-social-but-text"><img src="Images/twitter.png" width="25" height="25" </a></td>
+<!-- Pinterest -->
+    <td width="25" height="25">
+<a class="td-social-sharing-buttons td-social-pinterest" href="http://pinterest.com/pin/create/button/?url=http://www.dutchbirthplates.com/&amp;media=http://dutchbirthplates.com/Images/Birth16.jpg&description=Importers%20of%20delft%20blue%20birth%20and%20wedding%20plates." onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="td-icon-pinterest"></i><div class="td-social-but-text"><img src="Images/pinterest.jpg" width="25" height="25"</a></td>
+<!-- Email -->
+	<td width="25" height="25">
+    <a href="mailto:?Subject=Delft Blue Dutch Birth Plates&amp;Body=Here%20is%20John%20Braat%20and%20Company,%20LLC.%0D%0A%0D%0Ahttps://www.dutchbirthplates.com%0D%0A%0D%0A">
+       <i class="td-icon-email"></i><div class="td-social-but-text"><img src="Images/email.png" width="25" height="25"</a></td>
+<!-- Google + -->
+<td width="25" height="25">
+    <a href="https://plus.google.com/share?url=https://dutchbirthplates.com" target="_blank">
+        <img src="Images/google.png" alt="Google" width="25" height="25"</a></td>
+    </a>     
+    </tr>
+</table>  
+
+  
+    <p>&nbsp;</p>
+    <p>Copyright © John Braat and Company, LLC 2019</p>
+    <p>Web Design by Gilbert Associates</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100556965-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+</body>
+<!-- InstanceEnd --></html>
